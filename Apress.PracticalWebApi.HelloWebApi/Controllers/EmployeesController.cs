@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.OData;
 
 namespace Apress.PracticalWebApi.HelloWebApi.Controllers
 {
@@ -36,40 +37,40 @@ namespace Apress.PracticalWebApi.HelloWebApi.Controllers
         };
 
         #region exercise 1
-        //// GET api/employees
-        //public IEnumerable<Employee> Get()
-        //{
-        //    return list;
-        //}
+        // GET api/employees
+        public IEnumerable<Employee> Get()
+        {
+            return list;
+        }
 
-        //// GET api/employees/12345
-        //public Employee Get(int id)
-        //{
-        //    return list.First(e => e.Id == id);
-        //}
+        // GET api/employees/12345
+        public Employee Get(int id)
+        {
+            return list.First(e => e.Id == id);
+        }
 
-        //// POST api/employees
-        //public void Post(Employee employee)
-        //{
-        //    int maxId = list.Max(e => e.Id);
-        //    employee.Id = maxId + 1;
+        // POST api/employees
+        public void Post(Employee employee)
+        {
+            int maxId = list.Max(e => e.Id);
+            employee.Id = maxId + 1;
 
-        //    list.Add(employee);
-        //}
+            list.Add(employee);
+        }
 
-        //// PUT api/employees/12345
-        //public void Put(int id, Employee employee)
-        //{
-        //    int index = list.ToList().FindIndex(e => e.Id == id);
-        //    list[index] = employee;
-        //}
+        // PUT api/employees/12345
+        public void Put(int id, Employee employee)
+        {
+            int index = list.ToList().FindIndex(e => e.Id == id);
+            list[index] = employee;
+        }
 
-        //// DELETE api/employees/12345
-        //public void Delete(int id)
-        //{
-        //    Employee employee = Get(id);
-        //    list.Remove(employee);
-        //}
+        // DELETE api/employees/12345
+        public void Delete(int id)
+        {
+            Employee employee = Get(id);
+            list.Remove(employee);
+        }
         #endregion
 
         #region exercise 2
@@ -134,10 +135,80 @@ namespace Apress.PracticalWebApi.HelloWebApi.Controllers
         #endregion
 
         #region exercise 6
-        public IEnumerable<Employee> Get([FromUri]Filter filter)
+        //public IEnumerable<Employee> Get([FromUri]Filter filter)
+        //{
+        //    return list.Where(e => e.Department == filter.Department && e.LastName == filter.LastName);
+        //}
+        #endregion
+
+        #region exercise 7
+        //public HttpResponseMessage Post(Employee employee)
+        //{
+        //    int maxId = list.Max(e => e.Id);
+        //    employee.Id = maxId + 1;
+
+        //    list.Add(employee);
+
+        //    var response = Request.CreateResponse<Employee>(HttpStatusCode.Created, employee);
+
+        //    string uri = Url.Link("DefaultApi", new { id = employee.Id });
+        //    response.Headers.Location = new Uri(uri);
+        //    return response;
+        //}
+
+        //public HttpResponseMessage Put(int id, Employee employee)
+        //{
+        //    int index = list.ToList().FindIndex(e => e.Id == id);
+        //    if (index >= 0)
+        //    {
+        //        list[index] = employee; // overwrite the existing resource
+        //        return Request.CreateResponse(HttpStatusCode.NoContent);
+        //    }
+        //    else
+        //    {
+        //        list.Add(employee);
+
+        //        var response = Request.CreateResponse<Employee>(HttpStatusCode.Created, employee);
+
+        //        string uri = Url.Link("DefaultApi", new { id = employee.Id });
+        //        response.Headers.Location = new Uri(uri);
+        //        return response;
+        //    }
+        //}
+
+        ////public HttpResponseMessage Put(int id, Employee employee)
+        ////{
+        ////    int index = list.ToList().FindIndex(e => e.Id == id);
+        ////    if (index >= 0)
+        ////    {
+        ////        list[index] = employee;
+        ////        return Request.CreateResponse(HttpStatusCode.NoContent);
+        ////    }
+
+        ////    return Request.CreateResponse(HttpStatusCode.NotFound);
+        ////}
+
+        public HttpResponseMessage Patch(int id, Delta<Employee> deltaEmployee)
         {
-            return list.Where(e => e.Department == filter.Department && e.LastName == filter.LastName);
+            var employee = list.FirstOrDefault(e => e.Id == id);
+            if (employee == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
+            deltaEmployee.Patch(employee);
+
+            return Request.CreateResponse(HttpStatusCode.NoContent);
         }
+
+        //public void Delete(int id)
+        //{
+        //    Employee employee = list.FirstOrDefault(e => e.Id == id);
+        //    if (employee != null)
+        //    {
+        //        list.Remove(employee);
+        //    }
+        //}
         #endregion
     }
 }

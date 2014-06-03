@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Tracing;
 
 namespace Apress.PracticalWebApi.HelloWebApi
 {
@@ -20,6 +21,10 @@ namespace Apress.PracticalWebApi.HelloWebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.EnableSystemDiagnosticsTracing();
+
+            config.Services.Replace(typeof(ITraceWriter), new WebApiTracer());
         }
     }
 }

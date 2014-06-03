@@ -1,0 +1,183 @@
+﻿<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation />
+  <user />
+  <message><![CDATA[http://localhost:65373/api/employees]]></message>
+  <category>System.Web.Http.Request</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>SelectController</operation>
+  <user>DefaultHttpControllerSelector</user>
+  <message><![CDATA[Route='controller:employees']]></message>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>GetControllerTypes</operation>
+  <user>WebHostHttpControllerTypeResolver</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>GetControllerTypes</operation>
+  <user>WebHostHttpControllerTypeResolver</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>SelectController</operation>
+  <user>DefaultHttpControllerSelector</user>
+  <message><![CDATA[Employees]]></message>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>CreateController</operation>
+  <user>HttpControllerDescriptor</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>Create</operation>
+  <user>DefaultHttpControllerActivator</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>Create</operation>
+  <user>DefaultHttpControllerActivator</user>
+  <message><![CDATA[Apress.PracticalWebApi.HelloWebApi.Controllers.EmployeesController]]></message>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>CreateController</operation>
+  <user>HttpControllerDescriptor</user>
+  <message><![CDATA[Apress.PracticalWebApi.HelloWebApi.Controllers.EmployeesController]]></message>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>ExecuteAsync</operation>
+  <user>EmployeesController</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>SelectAction</operation>
+  <user>ApiControllerActionSelector</user>
+  <category>System.Web.Http.Action</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>SelectAction</operation>
+  <user>ApiControllerActionSelector</user>
+  <message><![CDATA[Selected action 'Get()']]></message>
+  <category>System.Web.Http.Action</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>ExecuteBindingAsync</operation>
+  <user>HttpActionBinding</user>
+  <category>System.Web.Http.ModelBinding</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>ExecuteBindingAsync</operation>
+  <user>HttpActionBinding</user>
+  <category>System.Web.Http.ModelBinding</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>InvokeActionAsync</operation>
+  <user>ApiControllerActionInvoker</user>
+  <message><![CDATA[Action='Get()']]></message>
+  <category>System.Web.Http.Action</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>ExecuteAsync</operation>
+  <user>ReflectedHttpActionDescriptor</user>
+  <message><![CDATA[Invoking action 'Get()']]></message>
+  <category>System.Web.Http.Action</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>ExecuteAsync</operation>
+  <user>ReflectedHttpActionDescriptor</user>
+  <message><![CDATA[Action returned 'System.Collections.Generic.List`1[Apress.PracticalWebApi.HelloWebApi.Models.Employee]']]></message>
+  <category>System.Web.Http.Action</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>Negotiate</operation>
+  <user>DefaultContentNegotiator</user>
+  <message><![CDATA[Type='IEnumerable`1', formatters=[JsonMediaTypeFormatterTracer, XmlMediaTypeFormatterTracer, FormUrlEncodedMediaTypeFormatterTracer, FormUrlEncodedMediaTypeFormatterTracer]]]></message>
+  <category>System.Net.Http.Formatting</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>GetPerRequestFormatterInstance</operation>
+  <user>JsonMediaTypeFormatter</user>
+  <message><![CDATA[Obtaining formatter of type 'JsonMediaTypeFormatter' for type='IEnumerable`1', mediaType='application/json; charset=utf-8']]></message>
+  <category>System.Net.Http.Formatting</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>GetPerRequestFormatterInstance</operation>
+  <user>JsonMediaTypeFormatter</user>
+  <message><![CDATA[Will use same 'JsonMediaTypeFormatter' formatter]]></message>
+  <category>System.Net.Http.Formatting</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>Negotiate</operation>
+  <user>DefaultContentNegotiator</user>
+  <message><![CDATA[Selected formatter='JsonMediaTypeFormatter', content-type='application/json; charset=utf-8']]></message>
+  <category>System.Net.Http.Formatting</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>InvokeActionAsync</operation>
+  <user>ApiControllerActionInvoker</user>
+  <category>System.Web.Http.Action</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>ExecuteAsync</operation>
+  <user>EmployeesController</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation />
+  <user />
+  <message><![CDATA[Content-type='application/json; charset=utf-8', content-length=unknown]]></message>
+  <category>System.Web.Http.Request</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:49 AM</timestamp>
+  <operation>WriteToStreamAsync</operation>
+  <user>JsonMediaTypeFormatter</user>
+  <message><![CDATA[Value='System.Collections.Generic.List`1[Apress.PracticalWebApi.HelloWebApi.Models.Employee]', type='IEnumerable`1', content-type='application/json; charset=utf-8']]></message>
+  <category>System.Net.Http.Formatting</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:50 AM</timestamp>
+  <operation>WriteToStreamAsync</operation>
+  <user>JsonMediaTypeFormatter</user>
+  <category>System.Net.Http.Formatting</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:50 AM</timestamp>
+  <operation>Dispose</operation>
+  <user>EmployeesController</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
+<trace>
+  <timestamp>6/3/2014 7:19:50 AM</timestamp>
+  <operation>Dispose</operation>
+  <user>EmployeesController</user>
+  <category>System.Web.Http.Controllers</category>
+</trace>
